@@ -76,23 +76,18 @@
         android:gravity="center_horizontal"
         android:weightSum="4">
 
-        <TextView
-            android:id="@+id/stool"
-            style="@style/MenuButton"
-            android:backgroundTint="@color/Green"
-            android:text="대변" />
 
         <TextView
-            android:id="@+id/urine"
+            android:id="@+id/liquid"
             style="@style/MenuButton"
             android:backgroundTint="@color/Green"
-            android:text="소변" />
+            android:text="식사량" />
 
         <TextView
             android:id="@+id/consume"
             style="@style/MenuButton"
             android:backgroundTint="@color/Green"
-            android:text="섭취량" />
+            android:text="앱체 섭취량" />
 
         <TextView
             android:id="@+id/report"

@@ -9,7 +9,7 @@ import android.widget.Toast;
 import com.example.medi.mediproject.Login.MainActivity;
 
 public class MenuActivity extends BaseActivity {
-    TextView tv,tv_stool, tv_urine, tv_consume,tv_report;
+    TextView tv,tv_liquid, tv_consume,tv_report;
     TextView bt_prev;
     String name,pid,pk;
 
@@ -22,8 +22,7 @@ public class MenuActivity extends BaseActivity {
         //Patient Info (name/number)
         pid= intent.getStringExtra("pid");
         tv =findViewById(R.id.tv);
-        tv_stool=findViewById(R.id.stool);
-        tv_urine=findViewById(R.id.urine);
+        tv_liquid = findViewById(R.id.liquid);
         tv_consume=findViewById(R.id.consume);
         tv_report =findViewById(R.id.report);
         bt_prev=findViewById(R.id.Bnt_logout);
@@ -35,8 +34,8 @@ public class MenuActivity extends BaseActivity {
         //인사
         tv.setText(name + "("+pid +")" +"님 무엇을 기록하시겠습니까?\n이름,환자번호가 잘못된 경우 '나가기 버튼을 눌러주세요");
 
-        //Stool page
-        tv_stool.setOnClickListener(new View.OnClickListener() {
+        //Consume
+        tv_consume.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent2 = new Intent(MenuActivity.this,TimeDateActivity.class);
@@ -45,25 +44,12 @@ public class MenuActivity extends BaseActivity {
                 startActivity(intent2);
             }
         });
-
-        //Urine
-        tv_urine.setOnClickListener(new View.OnClickListener() {
+        //liquid
+        tv_liquid.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent2 = new Intent(MenuActivity.this,TimeDateActivity.class);
                 intent2.putExtra("val",1);
-                intent2.putExtra("pid", pid);
-                startActivity(intent2);
-
-            }
-        });
-
-        //Consume
-        tv_consume.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent2 = new Intent(MenuActivity.this,TimeDateActivity.class);
-                intent2.putExtra("val",2);
                 intent2.putExtra("pid", pid);
                 startActivity(intent2);
             }
@@ -74,6 +60,7 @@ public class MenuActivity extends BaseActivity {
             @Override
             public void onClick(View view) {
                 Intent intent2 = new Intent(MenuActivity.this,ReportActivity.class);
+
                 intent2.putExtra("pid", pid);
                 startActivity(intent2);
 

@@ -73,8 +73,9 @@ public class RecordConsumeActivity extends BaseActivity {
         bt_prev.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent2 = new Intent(RecordConsumeActivity.this, ConsumeMenuActivity.class);
+                Intent intent2 = new Intent(RecordConsumeActivity.this,TimeDateActivity.class);
                 intent2.putExtra("pid",pid);
+                intent2.putExtra("val",0);
                 startActivity(intent2);
             }
         });
@@ -88,11 +89,16 @@ public class RecordConsumeActivity extends BaseActivity {
                 float cs = type*100000+ list.get(0).amount*10000 + list.get(1).amount*1000 + list.get(2).amount*100+ list.get(3).amount*10 + list.get(4).amount ;
                 float liquid =liquid= cal_liq();
 
-                MediPostRequest postRequest = new MediPostRequest(view.getContext(), pid, name, MediValues.INPUT, MediValues.CONSUME,liquid,time );
-                Toast.makeText(getApplicationContext(),"총 "+liquid + "cc가 성공적으로 등록되었습니다", Toast.LENGTH_LONG).show();
+                if( liquid<=0 )
+                    Toast.makeText(getApplicationContext(),"섭취량을 입력해주세요", Toast.LENGTH_LONG).show();
 
-                intent2.putExtra("pid",pid);
-                startActivity(intent2);
+                else {
+                    MediPostRequest postRequest = new MediPostRequest(view.getContext(), pid, name, MediValues.INPUT, MediValues.CONSUME, liquid, time);
+                    Toast.makeText(getApplicationContext(), "총 " + liquid + "cc가 성공적으로 등록되었습니다", Toast.LENGTH_LONG).show();
+
+                    intent2.putExtra("pid", pid);
+                    startActivity(intent2);
+                }
             }
         });
 
