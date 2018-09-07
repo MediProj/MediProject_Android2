@@ -1,10 +1,10 @@
-package com.example.medi.mediproject.Login;
+package com.example.medi.consume.Login;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Response.ErrorListener;
 import com.android.volley.Response.Listener;
 import com.android.volley.toolbox.JsonArrayRequest;
-import com.example.medi.mediproject.MediValues;
+import com.example.medi.consume.MediValues;
 
 import org.json.JSONArray;
 

@@ -1,4 +1,4 @@
-package com.example.medi.mediproject;
+package com.example.medi.consume;
 
 import org.junit.Test;
 

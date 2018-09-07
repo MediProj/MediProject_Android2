@@ -1,4 +1,4 @@
-package com.example.medi.mediproject;
+package com.example.medi.consume;
 
 import android.content.Context;
 import android.util.Log;
