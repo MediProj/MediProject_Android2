@@ -113,7 +113,7 @@ public class RecordLiquidActivity extends BaseActivity {
 
     public void onPrevClick(View view) {
         Intent intent = new Intent(RecordLiquidActivity.this, TimeDateActivity.class);
-        intent.putExtra("val",2);
+        intent.putExtra("val",1);
         intent.putExtra("pid", pid);
 
         startActivity(intent);
@@ -126,15 +126,20 @@ public class RecordLiquidActivity extends BaseActivity {
                 //cal liq amount
                 liquid = cal_liq(picked_item,bt_cnt);
 
-                //POST request
-                MediPostRequest postRequest = new MediPostRequest(view.getContext(), pid, name, MediValues.INPUT, MediValues.CONSUME, liquid,time);
-                Toast.makeText(getApplicationContext(), "총 "+String.valueOf(liquid)+ "cc가 성공적으로 등록되었습니다", Toast.LENGTH_LONG).show();
+                if( liquid<=0 )
+                    Toast.makeText(getApplicationContext(),"섭취량을 입력해주세요", Toast.LENGTH_LONG).show();
 
-                //next page
-                Intent intent = new Intent(RecordLiquidActivity.this, ReportActivity.class);
-                intent.putExtra("pid", pid);
-                startActivity(intent);
 
+                else {
+                    //POST request
+                    MediPostRequest postRequest = new MediPostRequest(view.getContext(), pid, name, MediValues.INPUT, MediValues.CONSUME, liquid, time);
+                    Toast.makeText(getApplicationContext(), "총 " + String.valueOf(liquid) + "cc가 성공적으로 등록되었습니다", Toast.LENGTH_LONG).show();
+
+                    //next page
+                    Intent intent = new Intent(RecordLiquidActivity.this, ReportActivity.class);
+                    intent.putExtra("pid", pid);
+                    startActivity(intent);
+                }
         }
         else
             Toast.makeText(getApplicationContext(),"섭취량을 입력해주세요", Toast.LENGTH_LONG).show();

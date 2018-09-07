@@ -54,16 +54,7 @@ public class TimeDateActivity extends BaseActivity {
 
         TextView title_pname = findViewById(R.id.p_name);
         title_pname.setText(name+" 님");
-
-        if(page_id==0)
-            tv.setText("대변을 보신 날짜/시간을 선택하고 다음 버튼을 눌러주세요");
-
-        else if(page_id==1)
-            tv.setText("소변을 보신 날짜/시간을 선택하고 다음 버튼을 눌러주세요");
-
-        else if(page_id==2)
-            tv.setText("날짜/시간을 선택하고 다음 버튼을 눌러주세요");
-
+        tv.setText("날짜/시간을 선택하고 다음 버튼을 눌러주세요");
         res.setText(R.string.promptPick);
 
         // Select Time button
@@ -126,18 +117,12 @@ public class TimeDateActivity extends BaseActivity {
                 //다음 페이지로 이동
                 else {
                     if (page_id==0) {
-                        Intent intent2 = new Intent(TimeDateActivity.this, CheckStoolActivity.class);
+                        Intent intent2 = new Intent(TimeDateActivity.this,RecordLiquidActivity.class);
                         intent2.putExtra("pid", pid);
                         startActivity(intent2);
                     }
                     else if(page_id==1) {
-                        Intent intent2 = new Intent(TimeDateActivity.this, CheckUrineActivity.class);
-                        intent2.putExtra("pid", pid);
-                        startActivity(intent2);
-                    }
-
-                    else if(page_id==2) {
-                        Intent intent2 = new Intent(TimeDateActivity.this,ConsumeMenuActivity.class);
+                        Intent intent2 = new Intent(TimeDateActivity.this,RecordConsumeActivity.class);
                         intent2.putExtra("pid", pid);
                         startActivity(intent2);
                     }
