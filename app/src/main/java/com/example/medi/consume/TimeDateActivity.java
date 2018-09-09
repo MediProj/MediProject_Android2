@@ -116,12 +116,12 @@ public class TimeDateActivity extends BaseActivity {
                 }
                 //다음 페이지로 이동
                 else {
-                    if (page_id==0) {
+                    if (page_id==1) {
                         Intent intent2 = new Intent(TimeDateActivity.this,RecordLiquidActivity.class);
                         intent2.putExtra("pid", pid);
                         startActivity(intent2);
                     }
-                    else if(page_id==1) {
+                    else if(page_id==0) {
                         Intent intent2 = new Intent(TimeDateActivity.this,RecordConsumeActivity.class);
                         intent2.putExtra("pid", pid);
                         startActivity(intent2);

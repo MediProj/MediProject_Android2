@@ -1,4 +1,4 @@
-package com.example.medi.consume.Login;
+package com.example.medi.consume;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,8 +13,6 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.Volley;
-import com.example.medi.consume.BaseActivity;
-import com.example.medi.consume.MediValues;
 
 import org.json.JSONArray;
 import org.json.JSONException;

@@ -65,7 +65,6 @@ style="@style/linearViewScreen">
         android:layout_marginVertical="10sp"
         android:layout_width="match_parent"
         android:layout_height="0sp">
-
     </ListView>
 
 <RelativeLayout

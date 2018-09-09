@@ -66,7 +66,7 @@ public class RecordConsumeActivity extends BaseActivity {
         list.add(new ConsumeItem("국", 0));
         list.add(new ConsumeItem("반찬1", 0));
         list.add(new ConsumeItem("반찬2", 0));
-        list.add(new ConsumeItem("후식", 0));
+        //list.add(new ConsumeItem("후식", 0));
 
         listView = findViewById(R.id.ConsumeList);
 
@@ -86,7 +86,7 @@ public class RecordConsumeActivity extends BaseActivity {
                 Intent intent2 = new Intent(RecordConsumeActivity.this, ReportActivity.class);
 
                 //식사량 정보 받아서 POST 요청 (type/밥/국/반찬)
-                float cs = type*100000+ list.get(0).amount*10000 + list.get(1).amount*1000 + list.get(2).amount*100+ list.get(3).amount*10 + list.get(4).amount ;
+                //float cs = type*100000+ list.get(0).amount*10000 + list.get(1).amount*1000 + list.get(2).amount*100+ list.get(3).amount*10 + list.get(4).amount ;
                 float liquid =liquid= cal_liq();
 
                 if( liquid<=0 )
@@ -130,8 +130,22 @@ public class RecordConsumeActivity extends BaseActivity {
             return i;
         }
 
+        public ConsumeViewHolder getViewHolder(View view, ViewGroup viewGroup){
+            ConsumeViewHolder holder=null;
+            view =layoutInflater.inflate(R.layout.consume_item,viewGroup,false);
+            holder = new ConsumeViewHolder();
+            holder.amount= view.findViewById(R.id.amount);
+            holder.plus=view.findViewById(R.id.plus);
+            holder.minus=view.findViewById(R.id.minus);
+            holder.fname=view.findViewById(R.id.name);
+            holder.img=view.findViewById(R.id.img);
+            view.setTag(holder);
+
+            return holder;
+        }
+
         @Override
-        public View getView(final int i, View view, ViewGroup viewGroup) {
+        public View getView(final int i, View view, final ViewGroup viewGroup) {
 
             ConsumeViewHolder holder=null;
 
@@ -166,9 +180,11 @@ public class RecordConsumeActivity extends BaseActivity {
                 case 3:
                     holder.img.setImageResource(R.drawable.c4_2);
                     break;
-                case 4:
+                /*
+                    case 4:
                     holder.img.setImageResource(R.drawable.c5);
                     break;
+                */
             }
 
 
@@ -179,7 +195,8 @@ public class RecordConsumeActivity extends BaseActivity {
                         int amount = listViewAdapter.list.get(i).amount;
                         finalHolder.amount.setText(getStringAmount(amount+1));
                         listViewAdapter.updateList(i, name, amount+1);
-                    }
+
+                     }
                 }
             });
 
@@ -189,10 +206,11 @@ public class RecordConsumeActivity extends BaseActivity {
                     if(listViewAdapter.list.get(i).amount>0) {
                         int amount=listViewAdapter.list.get(i).amount;
                         finalHolder.amount.setText(getStringAmount(amount-1));
-                        listViewAdapter.updateList(i,name, amount-1);
+                        listViewAdapter.updateList(i, name, amount-1);
                     }
                 }
             });
+
             return view;
         }
 
@@ -231,7 +249,7 @@ public class RecordConsumeActivity extends BaseActivity {
         res += list.get(3).amount*70.0f;
 
         //후식
-        res += list.get(4).amount*120.0f;
+        //res += list.get(4).amount*120.0f;
 
         return res*0.25f;
     }

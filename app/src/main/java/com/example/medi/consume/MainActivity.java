@@ -1,4 +1,4 @@
-package com.example.medi.consume.Login;
+package com.example.medi.consume;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,11 +7,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.example.medi.consume.BaseActivity;
-import com.example.medi.consume.MediValues;
-import com.example.medi.consume.MenuActivity;
-import com.example.medi.consume.R;
 
 public class MainActivity extends BaseActivity {
 

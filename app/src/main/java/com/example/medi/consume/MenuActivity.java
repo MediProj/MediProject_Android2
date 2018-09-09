@@ -6,8 +6,6 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.medi.consume.Login.MainActivity;
-
 public class MenuActivity extends BaseActivity {
     TextView tv,tv_liquid, tv_consume,tv_report;
     TextView bt_prev;

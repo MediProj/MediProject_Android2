@@ -3,7 +3,6 @@
     package="com.example.medi.consume">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-feature android:name="android.hardware.usb.host" />
 
     <application
         android:allowBackup="true"
@@ -14,7 +13,7 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true" >
 
-        <activity android:name=".Login.SplashActivity"
+        <activity android:name=".SplashActivity"
             android:configChanges="orientation"
             android:screenOrientation="landscape"
             android:theme="@style/SplashTheme">
@@ -31,12 +30,14 @@
         </activity>
 
 
-        <activity android:name=".Login.MainActivity"
+        <activity android:name=".MainActivity"
             android:configChanges="orientation"
             android:screenOrientation="landscape"/>
+
         <activity android:name=".MenuActivity"
             android:configChanges="orientation"
             android:screenOrientation="landscape"/>
+
         <activity android:name=".RecordConsumeActivity"
             android:configChanges="orientation"
             android:screenOrientation="landscape"/>

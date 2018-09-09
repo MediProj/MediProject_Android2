@@ -77,13 +77,13 @@
 
 
         <TextView
-            android:id="@+id/liquid"
+            android:id="@+id/consume"
             style="@style/MenuButton"
             android:backgroundTint="@color/Green"
             android:text="식사량" />
 
         <TextView
-            android:id="@+id/consume"
+            android:id="@+id/liquid"
             style="@style/MenuButton"
             android:backgroundTint="@color/Green"
             android:text="앱체 섭취량" />
