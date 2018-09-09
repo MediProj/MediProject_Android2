@@ -71,6 +71,7 @@ public class MediGetRequest {
 
                 MediValues.patientRecord[i] = new HashMap<>();
                 MediValues.pkRecordTag[i] = pk;
+                MediValues.patientRecord[i].put("record_pk", pk);
                 MediValues.patientRecord[i].put("date", date);
                 MediValues.patientRecord[i].put("time", time);
                 MediValues.patientRecord[i].put("type", type);

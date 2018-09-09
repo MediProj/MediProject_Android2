@@ -39,6 +39,7 @@
             android:background="@drawable/round"
             android:gravity="bottom"
 
+            android:textAlignment="center"
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -60,6 +61,8 @@
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+
+            android:textAlignment="center"
             android:nextFocusLeft="@+id/p_name"
             android:nextFocusUp="@+id/p_name"
             android:inputType="text"

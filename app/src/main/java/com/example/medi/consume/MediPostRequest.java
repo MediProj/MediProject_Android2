@@ -49,6 +49,11 @@ public class MediPostRequest {
         queue = Volley.newRequestQueue(context);
         //String url = "http://54.202.222.14/records/api/records-list/";
 
+        /*
+        int int_amt = (int)amount*100;
+        this.amount= int_amt/100;
+        */
+
         JSONArray tmp = new JSONArray();
         JSONObject post = null;
 

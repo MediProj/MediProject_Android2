@@ -224,10 +224,10 @@ public class RecordConsumeActivity extends BaseActivity {
         res = list.get(0).amount*120.0f;
         res += list.get(1).amount*230.0f;
 
-        //반찬1 고기류 반찬
-        res += list.get(2).amount*60.0f;
+        //반찬1
+        res += list.get(2).amount*70.0f;
 
-        //반찬2 채소류 반찬
+        //반찬2
         res += list.get(3).amount*70.0f;
 
         //후식
