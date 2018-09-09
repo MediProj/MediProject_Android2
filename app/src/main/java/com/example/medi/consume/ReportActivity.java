@@ -99,7 +99,7 @@ public class ReportActivity extends BaseActivity {
     }
 
     public void fillList() {
-        for (int i =  MediValues.patientRecord.length-1; i >=0; i--) {
+        for (int i =  0; i <MediValues.patientRecord.length; i++) {
             String date = MediValues.patientRecord[i].get("date");
             String time = MediValues.patientRecord[i].get("time");
             String type = MediValues.patientRecord[i].get("type");
@@ -108,7 +108,6 @@ public class ReportActivity extends BaseActivity {
 
             //섭취량 아니면 pass
             if((type.contains("Voiding") || type.contains("대변"))) {
-                i--;
                 continue;
             }
 
